@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52C11A34-7C1B-432E-B7BD-B8C5401D4FE0}</ProjectGuid>
+    <ProjectGuid>{B0DD1823-25D5-4FC8-AA0C-3DFDD253A62C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CreateRemoteThread</RootNamespace>
-    <AssemblyName>CreateRemoteThread</AssemblyName>
+    <RootNamespace>D_CreateRemoteThread</RootNamespace>
+    <AssemblyName>D-CreateRemoteThread</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DInvoke, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DInvoke.1.0.4\lib\net35\DInvoke.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +52,9 @@
       <Project>{c17e53b1-b46e-4716-bd6d-00536356f063}</Project>
       <Name>Loader</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
