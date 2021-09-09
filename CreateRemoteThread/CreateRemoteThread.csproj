@@ -41,14 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Loader\Enums.cs" />
+    <Compile Include="Loader\Generic.cs" />
+    <Compile Include="Loader\Imports.cs" />
+    <Compile Include="Loader\Structs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Loader\Loader.csproj">
-      <Project>{c17e53b1-b46e-4716-bd6d-00536356f063}</Project>
-      <Name>Loader</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
