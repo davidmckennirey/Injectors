@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crypto.cs" />
     <Compile Include="DynamicInvoke\Generic.cs" />
     <Compile Include="DynamicInvoke\Native.cs" />
     <Compile Include="DynamicInvoke\Win32.cs" />
