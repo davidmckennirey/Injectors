@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.IO;
 
-namespace D_CRT {
+namespace CRT {
     class Crypto {
         // https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.aes?view=net-5.0
         public static byte[] DecryptFromBytes_AES(byte[] cipherText, byte[] key, byte[] IV) {

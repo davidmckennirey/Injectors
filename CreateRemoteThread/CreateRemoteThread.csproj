@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crypto.cs" />
     <Compile Include="Loader\Enums.cs" />
     <Compile Include="Loader\Generic.cs" />
     <Compile Include="Loader\Imports.cs" />
