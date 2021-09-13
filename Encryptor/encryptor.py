@@ -94,6 +94,12 @@ def aes_decrypt(data, key, iv):
     cipher = AES.new(key, AES.MODE_CBC, iv)
     return unpad(cipher.decrypt(data), AES.block_size)
 
+def xor(data, key):
+    cipher = bytearray()
+    for i, b in enumerate(data):
+        cipher.append(b ^ key[i % len(key)])
+    return cipher
+
 def get_csharp_array(ciphertext, name):
     array = ""
     i = 0
@@ -137,13 +143,16 @@ def main():
             ciphertext, iv = aes_encrypt(data, key)
     elif args.encryption == "xor":
         v("Encrypting shellcode using XOR 'encryption'...")
-        ciphertext = "" # TODO
+        ciphertext = xor(data, key)
     v("Succesfully encrypted shellcode!")
 
     # Construct the output from the encrypted shellcode
     if args.format == "csharp":
         out = get_csharp_array(ciphertext, "buf")
-        d(f'DECRYPTED SHELLCODE: {get_csharp_array(aes_decrypt(ciphertext, key, iv), "buf")}')
+        if args.encryption == "aes":
+            d(f'DECRYPTED SHELLCODE: {get_csharp_array(aes_decrypt(ciphertext, key, iv), "buf")}')
+        elif args.encryption == "xor":
+            d(f'DECRYPTED SHELLCODE: {get_csharp_array(xor(ciphertext, key), "buf")}')
     elif args.format == "raw":
         out = data # We will just directly write bytes to a file
 
